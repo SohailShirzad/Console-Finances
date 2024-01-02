@@ -89,6 +89,12 @@ var finances = [
 
 const totalMonths = finances.length;
 
+let netTotal =   0;
+
+
+
+let greatestDecrease;
+
 console.log("Financial Analysis\n------------------\n")
 
 console.log("Total Months: " + totalMonths);
@@ -97,13 +103,64 @@ console.log("Total Months: " + totalMonths);
 // Total Net over the period
   // To find total net find the sum of amount column
   // the net total will be the sum of all 86 months
-
-  let netTotal = 0;
-
   for(let i = 0; i < totalMonths; i++)
   {
     netTotal += finances[i][1];
   }
 
   console.log("Total: " + "$"+netTotal);
+
+// Find Average Change
+
+let reversedDate  = [];
+
+let reversedAmount = [];
+
+//Reverse finances array
+
+for(let i = totalMonths - 1; i >= 0; i--)
+{
+  const [date , amount] = finances[i]
+
+  reversedDate.push(date);
+
+  reversedAmount.push(amount);
+
+}
+// To debug if for loop works find
+console.log(reversedDate);
+console.log(reversedAmount);
+
+
+let avgerageChanges = [];
+
+let sumOfAverageChanges = 0; 
+
+for(let i = 0; i < totalMonths - 1; i++)
+{
+  avgerageChanges.push(reversedAmount[i] - reversedAmount[i+1]);
+
+  
+  sumOfAverageChanges += avgerageChanges[i]
+}
+
+// To be used for debugging 
+// console.log(avgerageChanges);
+
+
+let totalAverageChange = sumOfAverageChanges / avgerageChanges.length;
+// place only two decimal place
+console.log("Average Change: "  + totalAverageChange.toFixed(2));
+
+
+  // Greatest Increase over the period
+   // To find greatest increase use the max method. 
+   // the max number should be the highest number over the period
+
+
+function greatestIncrease(arr){
+  return Math.max.apply(null,arr);
+}
+
+console.log("Greatest Increase in Profits/Losses:" + greatestIncrease([finances][1]))
 
