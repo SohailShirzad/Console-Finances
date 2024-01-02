@@ -2,7 +2,7 @@
 
 ## Description 
 
-The repo is created as part of the JavaScript fundementals that I learned last week. The aim of this repository was to meet the following financial requirements: 
+The repo was created as part of the JavaScript fundementals that I learned last week. The aim of this repository is to meet the following financial requirements: 
 
 * Find the total number of months included in the dataset.
 
