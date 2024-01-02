@@ -128,8 +128,8 @@ for(let i = totalMonths - 1; i >= 0; i--)
 
 }
 // To debug if for loop works find
-console.log(reversedDate);
-console.log(reversedAmount);
+// console.log(reversedDate);
+// console.log(reversedAmount);
 
 
 let avgerageChanges = [];
@@ -158,16 +158,19 @@ console.log("Average Change: "  + totalAverageChange.toFixed(2));
    // the max number should be the highest number over the period
 
 
-   let greatestIncrease = Math.max(...avgerageChanges);
-    
-
+   function greatestIncrease(){
+    let greatestIncrease = Math.max(...avgerageChanges);
    // below shows that index of 60 contains the greatest increase
-
   //  console.log("Greatest Increase in Profits/Losses is at index of " + avgerageChanges.indexOf(greatestIncrease));
-
-  
-
-
   let greatestIncreaseDate = reversedDate[60];
 
   console.log("Greatest Increase in Profits/Losses: " + greatestIncreaseDate + "(" + "$" +greatestIncrease+ ")");
+
+   }
+
+   // calling function 
+   greatestIncrease()
+
+   
+
+
