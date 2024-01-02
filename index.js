@@ -158,9 +158,16 @@ console.log("Average Change: "  + totalAverageChange.toFixed(2));
    // the max number should be the highest number over the period
 
 
-function greatestIncrease(arr){
-  return Math.max.apply(null,arr);
-}
+   let greatestIncrease = Math.max(...avgerageChanges);
+    
 
-console.log("Greatest Increase in Profits/Losses:" + greatestIncrease([finances][1]))
+   // below shows that index of 60 contains the greatest increase
 
+  //  console.log("Greatest Increase in Profits/Losses is at index of " + avgerageChanges.indexOf(greatestIncrease));
+
+  
+
+
+  let greatestIncreaseDate = reversedDate[60];
+
+  console.log("Greatest Increase in Profits/Losses: " + greatestIncreaseDate + "(" + "$" +greatestIncrease+ ")");
