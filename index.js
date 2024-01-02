@@ -89,14 +89,21 @@ var finances = [
 
 const totalMonths = finances.length;
 
-// const TotalNet
-
-// const Average
-
-// const greatestIncrease
-
-// const greatestDecrease
-
 console.log("Financial Analysis\n------------------\n")
 
 console.log("Total Months: " + totalMonths);
+
+
+// Total Net over the period
+  // To find total net find the sum of amount column
+  // the net total will be the sum of all 86 months
+
+  let netTotal = 0;
+
+  for(let i = 0; i < totalMonths; i++)
+  {
+    netTotal += finances[i][1];
+  }
+
+  console.log("Total: " + "$"+netTotal);
+
