@@ -101,6 +101,7 @@ console.log("Total Months: " + totalMonths);
   // the net total will be the sum of all 86 months
   for(let i = 0; i < totalMonths; i++)
   {
+    // get the second element which is at postion 1 within the nest arrays
     netTotal += finances[i][1];
   }
 
@@ -108,42 +109,36 @@ console.log("Total Months: " + totalMonths);
 
 // Find Average Change
 
-let reversedDate  = [];
+// declare two empty arrays to be used later
+const reversedDate  = [];
+const reversedAmount = [];
 
-let reversedAmount = [];
-
-//Reverse finances array
-
+//Reverse finances array to make it easier and assig them to the arrays above
 for(let i = totalMonths - 1; i >= 0; i--)
 {
   const [date , amount] = finances[i]
-
   reversedDate.push(date);
-
   reversedAmount.push(amount);
-
 }
-// To debug if for loop works find
+// For debugging purpose only
 // console.log(reversedDate);
 // console.log(reversedAmount);
 
-
-let avgerageChanges = [];
-
+// To be used to store sum of profit/losses from month to month 
+const avgerageChanges = [];
 let sumOfAverageChanges = 0; 
 
 for(let i = 0; i < totalMonths - 1; i++)
 {
-  avgerageChanges.push(reversedAmount[i] - reversedAmount[i+1]);
-
-  
+  // push to last index the average sum
+  avgerageChanges.push(reversedAmount[i] - reversedAmount[i+1]);  
   sumOfAverageChanges += avgerageChanges[i]
 }
 
 // To be used for debugging 
 // console.log(avgerageChanges);
 
-
+// find the average by dividing the total sum by length of the average changes array.
 let totalAverageChange = sumOfAverageChanges / avgerageChanges.length;
 // place only two decimal place
 console.log("Average Change: "  + totalAverageChange.toFixed(2));
@@ -153,6 +148,7 @@ console.log("Average Change: "  + totalAverageChange.toFixed(2));
    // To find greatest increase use the max method. 
    // the max number should be the highest number over the period
 
+   // Greatest Increase function
 
    function greatestIncrease(){
     // Use Math.min to find the highest
@@ -164,6 +160,8 @@ console.log("Average Change: "  + totalAverageChange.toFixed(2));
   console.log("Greatest Increase in Profits/Losses: " + greatestIncreaseDate + "(" + "$" +greatestIncrease+ ")");
 
    }
+
+// Greatest Decrease function
 
    function greatestDecrease(){
     // Use Math.min to find the lowest
