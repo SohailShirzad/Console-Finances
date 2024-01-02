@@ -91,10 +91,6 @@ const totalMonths = finances.length;
 
 let netTotal =   0;
 
-
-
-let greatestDecrease;
-
 console.log("Financial Analysis\n------------------\n")
 
 console.log("Total Months: " + totalMonths);
@@ -159,17 +155,32 @@ console.log("Average Change: "  + totalAverageChange.toFixed(2));
 
 
    function greatestIncrease(){
-    let greatestIncrease = Math.max(...avgerageChanges);
+    // Use Math.min to find the highest
+    const greatestIncrease = Math.max(...avgerageChanges);
    // below shows that index of 60 contains the greatest increase
   //  console.log("Greatest Increase in Profits/Losses is at index of " + avgerageChanges.indexOf(greatestIncrease));
-  let greatestIncreaseDate = reversedDate[60];
+  const greatestIncreaseDate = reversedDate[60];
 
   console.log("Greatest Increase in Profits/Losses: " + greatestIncreaseDate + "(" + "$" +greatestIncrease+ ")");
 
    }
 
-   // calling function 
-   greatestIncrease()
+   function greatestDecrease(){
+    // Use Math.min to find the lowest
+    const greatestDecrease = Math.min(...avgerageChanges);
+   // below shows that index of 60 contains the greatest increase
+  // console.log("Greatest Decrease in Profits/Losses is at index of " + avgerageChanges.indexOf(greatestDecrease));
+
+  const greatestDecreaseDate = reversedDate[41];
+
+   console.log("Greatest Decrease in Profits/Losses: " + greatestDecreaseDate + "(" + "$" +greatestDecrease+ ")");
+
+   }
+   // calling functions
+   greatestIncrease() 
+   greatestDecrease()
+
+   
 
    
 
